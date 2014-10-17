@@ -48,7 +48,7 @@
     redirectTo: '/'
   });
 })
-.controller("computerCtrl", function ($location, $http, $timeout, rootUrl, TSMUpdate, USMTUpdate, WordPerfectUpdate, IDFUpdate) {
+.controller("computerCtrl", function ($window, $location, $http, $timeout, $route, rootUrl, TSMUpdate, USMTUpdate, WordPerfectUpdate, IDFUpdate) {
   var self = this;
 
   self.computerSearchValue = "";
@@ -205,6 +205,7 @@
 
   function backToHome() {
     $location.path('/');
+    $window.location.reload();
   }
 
   function USMTConsole() {
