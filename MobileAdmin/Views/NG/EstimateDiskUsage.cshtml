@@ -1,0 +1,30 @@
+﻿<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td width="30%">Total Space</td>
+          <td>{{vm.computer.diskUsage.TotalSpace}}</td>
+        </tr>
+        <tr>
+          <td>Free Space</td>
+          <td>{{vm.computer.diskUsage.FreeSpace}}</td>
+        </tr>
+        <tr>
+          <td>Used Space</td>
+          <td>{{vm.computer.diskUsage.UsedSpace}}</td>
+        </tr>
+        <tr>
+          <td>Percent Used</td>
+          <td>{{vm.computer.diskUsage.PercentUsed}}</td>
+        </tr>
+        <tr>
+          <td>Percent Free</td>
+          <td>{{vm.computer.diskUsage.PercentFree}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-block btn-primary" ng-click="vm.backToActions()">Back</button>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+﻿<div class="row">
+  <div class="col-xs-12">
+
+    <button type="button" class="btn btn-block btn-default" confirmed-click="vm.installIDF()" ng-confirm-click="Are you sure you want to install IDF?">Install Identity Finder</button>
+    <button type="button" class="btn btn-block btn-default" ng-click="vm.backToActions()">Back</button>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <div id="window">
+      <div id="toolbar">
+        <div class="top">
+          <div id="lights">
+            <div class="light red">
+              <div class="glyph">×</div>
+              <div class="shine"></div>
+              <div class="glow"></div>
+            </div>
+            <div class="light yellow">
+              <div class="glyph">-</div>
+              <div class="shine"></div>
+              <div class="glow"></div>
+            </div>
+            <div class="light green">
+              <div class="glyph">+</div>
+              <div class="shine"></div>
+              <div class="glow"></div>
+            </div>
+          </div>
+          <div id="title">
+            <div class="folder">
+              <div class="tab"></div>
+              <div class="body"></div>
+            </div>
+            Ben's Command Window
+          </div>
+          <div id="bubble">
+            <div class="shine"></div>
+            <div class="glow"></div>
+          </div>
+        </div>
+      </div>
+      <div id="body" scroll-glue>
+        <p ng-repeat="message in vm.IDFUpdate.messages[vm.computer.IPAddress] track by $index">AULManage:Ben$ {{message}}</p>
+        <div class="cursor"></div>
+      </div>
+    </div>
+  </div>
+</div>

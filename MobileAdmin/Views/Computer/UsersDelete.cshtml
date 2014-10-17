@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "UsersDelete";
+    Layout = "~/Views/Shared/_LayoutCustom.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <form role="form" action="~/Computer/UsersDeleteConfirmed">
+            <div class="form-group">
+                <label for="computerName">Computer Name</label>
+                <input type="text" class="form-control" name="computerName" value="@ViewBag.ComputerName" />
+            </div>
+            <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" value="@ViewBag.Username" />
+            </div>
+            <button type="submit" class="btn btn-default">Delete</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Map Drive";
+    Layout = "~/Views/Shared/_LayoutCustom.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <form role="form" action="~/Computer/MapDrive" method="post">
+            <div class="form-group">
+                <label for="computerName">Computer Name</label>
+                <input type="text" class="form-control" name="computerName" value="@ViewBag.ComputerName" />
+            </div>
+            <div class="form-group">
+                <label for="driveLetter">Drive Letter</label>
+                <input type="text" class="form-control" name="driveLetter" />
+            </div>
+            <div class="form-group">
+                <label for="networkDrive">Network Drive</label>
+                <input type="text" class="form-control" name="networkDrive" />
+            </div>
+            <div class="form-group">
+                <label for="userName">UserName</label>
+                <input type="text" class="form-control" name="userName" />
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "MoveInAD";
+    Layout = "~/Views/Shared/_LayoutCustom.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <p class="lead">Current OU: @ViewBag.CurrentOU</p>
+        <a class="btn btn-primary btn-block" href="~/Computer/MoveInAD?computerName=@ViewBag.ComputerName&ADPath=@ViewBag.ParentOUDN">..</a>
+        @foreach (string child in ViewBag.Children as List<string>)
+        {            
+            <a class="btn btn-primary btn-block" href="~/Computer/MoveInAD?computerName=@ViewBag.ComputerName&ADPath=@child">@child.Split(',').ToList().Take(1).First()</a>
+        }
+
+        <br />
+        <a class="btn btn-primary btn-block" href="~/Computer/MoveInADConfirmed?computerName=@ViewBag.ComputerName&ADPath=@ViewBag.CurrentOUDN">Move Here</a>
+    </div>
+</div>

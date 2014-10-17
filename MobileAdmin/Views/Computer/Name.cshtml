@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Name";
+    Layout = "~/Views/Shared/_LayoutCustom.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <a href="~/Computer/Users?computerName=@ViewBag.ComputerName" class="btn btn-block btn-default">Users and Groups</a>
+        <a href="~/Computer/EnableAD?computerName=@ViewBag.ComputerName" class="btn btn-block btn-default">Enable in AD</a>
+        <a href="~/Computer/MoveInAD?computerName=@ViewBag.ComputerName&ADPath=" class="btn btn-block btn-default">Move in AD</a>
+        <a href="~/Computer/MapDrive?computerName=@ViewBag.ComputerName" class="btn btn-block btn-default">Map Drive</a>
+        <a href="~/Computer/USMT?computerName=@ViewBag.ComputerName" class="btn btn-block btn-default">Start USMT</a>
+        <a href="~/Computer/TSM?computerName=@ViewBag.ComputerName" class="btn btn-block btn-default">Start TSM</a>
+    </div>
+</div>

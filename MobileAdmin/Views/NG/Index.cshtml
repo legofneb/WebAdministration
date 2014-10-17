@@ -1,0 +1,43 @@
+﻿@{
+  Layout = null;
+}
+
+<!DOCTYPE html>
+<html ng-app="computer">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Computer Administration</title>
+  <link href="~/Content/bootstrap.css" rel="stylesheet" />
+  <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+  <link href="~/Content/terminal.css" rel="stylesheet"/>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="~/Content/loading-bar.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular-route.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular-resource.min.js"></script>
+  <script src="~/Scripts/loading-bar.js"></script>
+  <script src="~/Scripts/scrollglue.js"></script>
+  <script src="~/Scripts/jquery.signalR-2.1.1.js"></script>
+  <script src="~/Scripts/angular-signalr-hub.js"></script>
+
+  <script>
+    angular.module("computer", ["ngRoute", "ngResource", "SignalR", 'luegg.directives', 'angular-loading-bar']).constant('rootUrl', "@Url.Content("~/")");
+  </script>
+
+  
+</head>
+<body ng-controller="computerCtrl as vm">
+  <div class="container-fluid">
+    @Html.Partial("~\\Views\\Shared\\_NGMenu.cshtml")
+
+    <ng-view></ng-view>
+
+    
+  </div>
+
+  <script src="~/Scripts/computer.js"></script>
+</body>
+</html>

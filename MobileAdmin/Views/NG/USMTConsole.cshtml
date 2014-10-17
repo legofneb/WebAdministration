@@ -1,0 +1,71 @@
+﻿<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Source IP Address</th>
+          <th>Target IP Address</th>
+          <th>USMT GID</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="record in vm.usmtComputers" ng-click="vm.setUSMTComputer(record.IPAddress)">
+          <td>{{record.IPAddress}}</td>
+          <td>{{record.NewIPAddress}}</td>
+          <td>{{record.User}}</td>
+          <td>{{record.Status}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div id="window">
+      <div id="toolbar">
+        <div class="top">
+          <div id="lights">
+            <div class="light red">
+              <div class="glyph">×</div>
+              <div class="shine"></div>
+              <div class="glow"></div>
+            </div>
+            <div class="light yellow">
+              <div class="glyph">-</div>
+              <div class="shine"></div>
+              <div class="glow"></div>
+            </div>
+            <div class="light green">
+              <div class="glyph">+</div>
+              <div class="shine"></div>
+              <div class="glow"></div>
+            </div>
+          </div>
+          <div id="title">
+            <div class="folder">
+              <div class="tab"></div>
+              <div class="body"></div>
+            </div>
+            Ben's Command Window
+          </div>
+          <div id="bubble">
+            <div class="shine"></div>
+            <div class="glow"></div>
+          </div>pas
+        </div>
+      </div>
+      <div id="body" scroll-glue>
+        <p ng-repeat="message in vm.usmt.messages[vm.usmtCurrentIP] track by $index">AULManage:Ben$ {{message}}</p>
+        <div class="cursor"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <button type="button" class="btn btn-default" ng-click="vm.backToHome()">Go back to actions</button>
+  </div>
+</div>

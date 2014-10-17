@@ -1,0 +1,14 @@
+﻿<div class="row">
+  <div class="col-xs-12">
+    <div class="list-group">
+      <a class="list-group-item" ng-repeat="admin in vm.computer.admins"><button style="cursor:pointer;" class="btn btn-danger btn-xs" confirmed-click="vm.adminDelete(admin)" ng-confirm-click="Are you sure?"><i class="fa fa-minus"></i></button> {{admin}}</a>
+    </div>
+
+    <div class="input-group">
+      <input type="text" class="form-control" ng-model="newAdmin" placeholder="FORMAT: AUBURN\USERNAME"/>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="vm.adminAdd(newAdmin)">Add User</button>
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+﻿<div class="row">
+  <div class="col-xs-12">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-xs-2">IP Address</label>
+        <div class="col-xs-10">
+          <input type="text" class="form-control" ng-model="vm.IPAddress" placeholder="IP Address"/>
+        </div>
+      </div>
+      <div class="col-xs-10 col-xs-offset-2">
+        <button type="button" class="btn btn-primary btn-block" ng-click="vm.setIPForComputer()">Add IP</button>
+        <button type="button" class="btn btn-default btn-block" ng-click="vm.backToActions()">Cancel</button>
+      </div>
+    </form> 
+  </div>
+</div>

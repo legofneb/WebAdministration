@@ -1,0 +1,75 @@
+﻿<div class="row">
+  <div class="col-xs-12">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-xs-2">USMT GID</label>
+        <div class="col-xs-10">
+          <input type="text" class="form-control" ng-model="vm.computer.USMTGID" placeholder="USMT GID" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-xs-2">New IP Address</label>
+        <div class="col-xs-10">
+          <input type="text" class="form-control" ng-model="vm.computer.NewIPAddress" placeholder="New IP Address" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+          <div class="checkbox">
+            <label><input type="checkbox" ng-model="vm.computer.AttachUSMT" /> Attach Process?</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-10 col-xs-offset-2">
+        <button type="button" class="btn btn-default btn-lg btn-block" ng-click="vm.startUSMT()">Start USMT</button>
+      </div>
+      <div class="col-xs-10 col-xs-offset-2">
+        <button type="button" class="btn btn-default btn-block" ng-click="vm.backToActions()">Back</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div id="window">
+      <div id="toolbar">
+        <div class="top">
+          <div id="lights">
+            <div class="light red">
+              <div class="glyph">×</div>
+              <div class="shine"></div>
+              <div class="glow"></div>
+            </div>
+            <div class="light yellow">
+              <div class="glyph">-</div>
+              <div class="shine"></div>
+              <div class="glow"></div>
+            </div>
+            <div class="light green">
+              <div class="glyph">+</div>
+              <div class="shine"></div>
+              <div class="glow"></div>
+            </div>
+          </div>
+          <div id="title">
+            <div class="folder">
+              <div class="tab"></div>
+              <div class="body"></div>
+            </div>
+            Ben's Command Window
+          </div>
+          <div id="bubble">
+            <div class="shine"></div>
+            <div class="glow"></div>
+          </div>pas
+        </div>
+      </div>
+      <div id="body" scroll-glue>
+        <p ng-repeat="message in vm.usmt.messages[vm.computer.IPAddress] track by $index">AULManage:Ben$ {{message}}</p>
+        <div class="cursor"></div>
+      </div>
+    </div>
+  </div>
+</div>

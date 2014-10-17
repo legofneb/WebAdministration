@@ -1,0 +1,51 @@
+﻿<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td width="30%">Serial Number</td>
+          <td>{{vm.computer.SerialNumber}}</td>
+        </tr>
+        <tr>
+          <td>Lease Tag</td>
+          <td>{{vm.computer.LeaseTag}}</td>
+        </tr>
+        <tr>
+          <td>IP Address</td>
+          <td>{{vm.computer.IPAddress}}</td>
+        </tr>
+        <tr>
+          <td>MAC Address</td>
+          <td>{{vm.computer.MAC}}</td>
+        </tr>
+        <tr>
+          <td>Computer Name</td>
+          <td>{{vm.computer.ComputerName}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-block btn-info" ng-hide="vm.computer.IPAddress" ng-click="vm.addIPToComputer()">Add IP</button>
+    <button class="btn btn-block btn-info" ng-show="vm.computer.IPAddress" ng-click="vm.addIPToComputer()">Change IP</button>
+  </div>
+</div>
+
+<hr />
+<h2>Actions</h2>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-block btn-default" ng-disabled="!vm.computer.IPAddress" ng-click="vm.admin();">Users and Groups</button>
+    <button class="btn btn-block btn-default" ng-disabled="!vm.computer.LeaseTag">Enable in AD</button>
+    <button class="btn btn-block btn-default" ng-disabled="!vm.computer.LeaseTag">Move in AD</button>
+    <button class="btn btn-block btn-default" ng-disabled="!vm.computer.IPAddress">Map Drive</button>
+    <button class="btn btn-block btn-default" ng-disabled="!vm.computer.IPAddress" ng-click="vm.USMTGo()">Start USMT</button>
+    <button class="btn btn-block btn-default" ng-disabled="!vm.computer.IPAddress" ng-click="vm.estimateDiskUsage()">Estimate Disk Usage</button>
+    <button class="btn btn-block btn-default" ng-disabled="!vm.computer.IPAddress" ng-click="vm.TSM()">Start TSM</button>
+    <button class="btn btn-block btn-default" ng-disabled="!vm.computer.IPAddress" ng-click="vm.wordPerfect()">Install WordPerfect</button>
+    <button class="btn btn-block btn-default" ng-disabled="!vm.computer.IPAddress" ng-click="vm.IDF()">Install Identity Finder</button>
+  </div>
+</div>
