@@ -224,7 +224,6 @@
     <Compile Include="Controllers\ComputerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NGController.cs" />
-    <Compile Include="Controllers\OUController.cs" />
     <Compile Include="Defaults\ADPaths.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -312,13 +311,9 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Properties\PublishProfiles\newSite.pubxml" />
     <None Include="Properties\PublishProfiles\test.pubxml" />
     <Content Include="Scripts\angular-animate.js" />
@@ -630,19 +625,6 @@
     </Content>
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -653,31 +635,18 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Home\Kill.cshtml" />
     <Content Include="Views\Shared\_LayoutCustom.cshtml" />
-    <Content Include="Views\Home\KillAction.cshtml" />
     <Content Include="Views\Computer\Index.cshtml" />
-    <Content Include="Views\Computer\Users.cshtml" />
-    <Content Include="Views\Computer\UsersAdd.cshtml" />
-    <Content Include="Views\Computer\UsersAddConfirmed.cshtml" />
-    <Content Include="Views\Computer\UsersDelete.cshtml" />
-    <Content Include="Views\Computer\UsersDeleteConfirmed.cshtml" />
     <Content Include="Views\Computer\Name.cshtml" />
     <Content Include="Views\Computer\EnableAD.cshtml" />
     <Content Include="Views\Computer\MoveInAD.cshtml" />
     <Content Include="Views\Computer\MoveInADConfirmed.cshtml" />
     <Content Include="Views\Computer\MapDrive.cshtml" />
-    <Content Include="Views\Computer\USMT.cshtml" />
-    <Content Include="Views\Computer\StartUSMT.cshtml" />
-    <Content Include="Views\Computer\TSM.cshtml" />
-    <Content Include="Views\Computer\StartTSM.cshtml" />
     <Content Include="Views\NG\Index.cshtml" />
     <Content Include="Views\Shared\_NGMenu.cshtml" />
     <Content Include="Views\NG\Home.cshtml" />
@@ -689,11 +658,8 @@
     <Content Include="Views\NG\Admin.cshtml" />
     <Content Include="Views\NG\WordPerfect.cshtml" />
     <Content Include="Views\NG\MapDrive.cshtml" />
-    <Content Include="Views\OU\Home.cshtml" />
-    <Content Include="Views\OU\Actions.cshtml" />
     <Content Include="Views\NG\IDF.cshtml" />
     <Content Include="Views\NG\USMTConsole.cshtml" />
-    <None Include="Views\OU\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

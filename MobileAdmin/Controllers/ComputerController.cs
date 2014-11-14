@@ -14,6 +14,8 @@ using System.Web.Mvc;
 
 namespace MobileAdmin.Controllers
 {
+    // TODO Remove Computer Controller after transferring functionality
+
     [Authorize]
     [InitializeSimpleMembership]
     public class ComputerController : Controller
@@ -221,127 +223,6 @@ namespace MobileAdmin.Controllers
             nLocation.Close();
             eLocation.Close();
         }
-        #endregion
-
-
-        #region USMT
-
-        [HttpGet]
-        public ActionResult USMT(string computerName)
-        {
-            ViewBag.ComputerName = computerName;
-
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult StartUSMT(string computerName, string user, string targetIP)
-        {
-            Process proc = new Process();
-            proc.StartInfo.UserName = AdminAccounts.GetAdminAccount1().UserName;
-            SecureString secure = AdminAccounts.GetAdminAccount1().SecurePassword;
-
-            proc.StartInfo.Domain = Domain.GetDomain();
-            proc.StartInfo.Password = secure;
-            proc.StartInfo = new ProcessStartInfo(@"cmd.exe", String.Format(@"/c schedUSMT.cmd {0} {1} {2}", computerName, user, targetIP));
-            proc.StartInfo.WorkingDirectory = @"C:\Manage\USMT";
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.RedirectStandardOutput = true;
-            proc.Start();
-            proc.WaitForExit(10);
-
-            ViewBag.ComputerName = computerName;
-            return View();
-        }
-
-        #endregion
-
-        #region TSM
-
-        [HttpGet]
-        public ActionResult TSM(string computerName)
-        {
-            ViewBag.ComputerName = computerName;
-
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult StartTSM(string computerName,string user)
-        {
-            Process proc = new Process();
-            proc.StartInfo.UserName = AdminAccounts.GetAdminAccount1().UserName;
-            SecureString secure = AdminAccounts.GetAdminAccount1().SecurePassword;
-
-            proc.StartInfo.Domain = Domain.GetDomain();
-            proc.StartInfo.Password = secure;
-            proc.StartInfo = new ProcessStartInfo(@"cmd.exe", String.Format(@"/c startTSM.cmd {0} {1}", computerName, user));
-            proc.StartInfo.WorkingDirectory = @"C:\Manage\TSM";
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.RedirectStandardOutput = true;
-            proc.Start();
-            proc.WaitForExit(10);
-
-            ViewBag.ComputerName = computerName;
-            return View();
-        }
-
-        #endregion
-
-        #region MapDrive
-        [HttpGet]
-        public ActionResult MapDrive(string computerName)
-        {
-            ViewBag.ComputerName = computerName;
-
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult MapDrive(string computerName, string driveLetter, string networkDrive, string userName)
-        {
-            Process proc = new Process();
-            proc.StartInfo.UserName = AdminAccounts.GetAdminAccount1().UserName;
-            SecureString secure = AdminAccounts.GetAdminAccount1().SecurePassword;
-
-            string DriveLetter = FormatDriveLetter(driveLetter);
-            string UserName = FormatUserName(userName);
-
-            proc.StartInfo.Domain = Domain.GetDomain();
-            proc.StartInfo.Password = secure;
-            proc.StartInfo = new ProcessStartInfo(@"cmd.exe", String.Format(@"/c mapDrive.cmd {0} {1} {2} {3}", computerName, DriveLetter, networkDrive, UserName));
-            proc.StartInfo.WorkingDirectory = @"C:\Manage\MapDrive";
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.RedirectStandardOutput = true;
-            proc.Start();
-            proc.WaitForExit(10);
-
-            ViewBag.ComputerName = computerName;
-            return View();
-        }
-
-        private string FormatUserName(string userName)
-        {
-            if (userName.ToUpper().StartsWith(Domain.AddDomainToUsername("").ToUpper()))
-            {
-                return userName;
-            }
-            else
-            {
-                return Domain.AddDomainToUsername(userName);
-            }
-        }
-
-        private string FormatDriveLetter(string driveLetter)
-        {
-            if (!driveLetter.EndsWith(":"))
-            {
-                return driveLetter + ":";
-            }
-
-            return driveLetter;
-        }
-
         #endregion
     }
 }
