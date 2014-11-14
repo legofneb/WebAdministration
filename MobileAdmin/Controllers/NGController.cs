@@ -73,5 +73,7 @@ namespace MobileAdmin.Controllers
         {
             return PartialView();
         }
+
+        // TODO Add method to install Creative Cloud
     }
 }
